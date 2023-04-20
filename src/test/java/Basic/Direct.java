@@ -138,25 +138,13 @@ public class Direct {
 
         //Create a JSON String for parameters
         String jsonString = 
-        		"{\r\n" + 
-        		" \"questionTemplateId\" : 7,\r\n” +
-        		" \"correctAnswer\" : {\r\n”+
-        		" \”answer\” : [ \r\n” +
-        		" { \r\n" +
-        		" \"optionNumber\" :\”2\”,\r\n”+
-        		" \”optionText\” : \”Opt2\”,\r\n” +
-        		" }\r\n”+
-                " ]\r\n” +
-                " }\r\n” +
+        		"{\r\n" +
+                        "{\n    \"questionTemplateId\": 7,\n    \"correctAnswer\": {\n        \"answer\": [\n            {\n                \"optionNumber\": \"2\",\n                \"optionText\": \"Opt2\"\n            }\n        ]\n    }\n}"
+                        +
         		"}";
 
-        //Add Key-Value sets to the JSON Object
-        requestParams.put("date_of_birth", "1980-10-24");
-        requestParams.put("mobile_number", "+91 8139779453");
-        requestParams.put("referred_by", "7c99hbf5");
-
         //Add parameters saved in form of Json String
-        httpRequest.body(jsonString());
+        httpRequest.body(jsonString);
 
         Response response = httpRequest.request(Method.POST);
 
@@ -193,7 +181,11 @@ public class Direct {
 /*
 
 
-http://makeseleniumeasy.com/2019/12/02/rest-assured-tutorial-10-lets-write-first-put-request-in-rest-assured/ 
+Tutorial http://makeseleniumeasy.com/2019/12/02/rest-assured-tutorial-10-lets-write-first-put-request-in-rest-assured/
+
+Use  https://www.convertsimple.com/convert-query-string-to-json/
+
+or simply search "convert parameters to JsonString"
 
 {
     "firstname" : "Amod",
